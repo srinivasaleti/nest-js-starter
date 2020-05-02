@@ -1,0 +1,24 @@
+{
+  "moduleFileExtensions": ["js", "json", "ts"],
+  "globalSetup": "<rootDir>/test/jest.setup.ts",
+  "rootDir": "..",
+  "testEnvironment": "node",
+  "testRegex": ".*?spec.ts*",
+  "transform": {
+    "^.+\\.(t|j)s$": "ts-jest"
+  },
+  "testTimeout": 30000,
+  "collectCoverage": true,
+  "coverageDirectory": "test-reports/integration-test-coverage",
+  "coverageReporters": ["html"],
+  "collectCoverageFrom": ["src/**/*.ts"],
+  "testResultsProcessor": "<rootDir>/node_modules/jest-junit-reporter",
+  "coverageThreshold": {
+    "global": {
+      "branches": 20,
+      "functions": 20,
+      "lines": 20,
+      "statements": 20
+    }
+  }
+}

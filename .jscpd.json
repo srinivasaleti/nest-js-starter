@@ -1,0 +1,8 @@
+{
+  "threshold": 0.1,
+  "reporters": ["html", "console"],
+  "ignore": [],
+  "absolute": true,
+  "output": "test-reports/dupcheck",
+  "mode": "strict"
+}

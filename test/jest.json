@@ -1,0 +1,14 @@
+{
+  "moduleFileExtensions": ["js", "json", "ts"],
+  "rootDir": "..",
+  "testEnvironment": "node",
+  "testRegex": "^.*?\\.spec.ts$",
+  "transform": {
+    "^.+\\.(t|j)s$": "ts-jest"
+  },
+  "collectCoverage": true,
+  "coverageDirectory": "test-reports/unit-test-coverage",
+  "coverageReporters": ["html"],
+  "collectCoverageFrom": ["src/**/*.ts"],
+  "testResultsProcessor": "<rootDir>/node_modules/jest-junit-reporter"
+}
