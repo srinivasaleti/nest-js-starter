@@ -1,5 +1,5 @@
 {
-  "name": "wapp-service",
+  "name": "assetwhere-api",
   "version": "0.0.1",
   "description": "",
   "author": "",
@@ -23,7 +23,7 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "dupchk": "npx jscpd src",
     "remove-unused-imports": "tslint --config tslint-imports.json --fix --project .",
-    "checks": "yarn lint && yarn dupchk && yarn test",
+    "precommit-checks": "yarn lint && yarn dupchk",
     "prepush-checks": "yarn test"
   },
   "dependencies": {
@@ -74,12 +74,17 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn prepush-checks"
     }
+  },
+  "engines": {
+    "npm": ">=8.0.0",
+    "node": ">=16.0.0"
   },
   "lint-staged": {
     "*.ts": [
-      "yarn checks",
+      "yarn precommit-checks",
       "prettier --write",
       "yarn remove-unused-imports"
     ],
